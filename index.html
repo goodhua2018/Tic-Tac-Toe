@@ -33,19 +33,27 @@
         //declear a variable to count how many times I clicked
         var clickCount = 0;
         var boxSection = document.querySelector('.box');
+        var clickedId = [];
         boxSection.addEventListener('click', function(event) {
             var itemClicked = event.target;
-            console.log(itemClicked.id);
-            //everytime, when I click, clickCount increase by 1
-            clickCount++;
+            // console.log(itemClicked.id);
+            if (!clickedId.includes(itemClicked.id)) {
+                clickCount++;
+                clickedId.push(itemClicked.id);
+                if (isEven(clickCount)) {
+                    itemClicked.classList.add('circle');
+                } else {
+                    itemClicked.classList.add('cross');
+                }
+            } else return;
             
-            console.log(clickCount);
+            console.log(clickedId);
+            //everytime, when I click, clickCount increase by 1
+            
+            
+            // console.log(clickCount);
             //if clickCount is even number, show circle;
-            if (isEven(clickCount)) {
-                itemClicked.classList.add('circle');
-            } else {
-                itemClicked.classList.add('cross');
-            }
+            
         })
         //
         function isEven(num) {
