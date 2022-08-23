@@ -1,3 +1,3 @@
 # Tic Tac Toe
 
-##  :computer: [Click here](#) to see my live project!
+##  :computer: [Click here](https://goodhua2018.github.io/tic-tac-toe/) to see my live project!
