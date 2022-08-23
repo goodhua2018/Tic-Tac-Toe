@@ -6,24 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="./style.css">
-    
+    <!-- <script type="text/javascript" src="./tictactoe.js"></script>
+     -->
 </head>
 <body>
     <header>
         <h1>Tic Tac Toe</h1>
         <button class="start">start</button>
     </header>
-    <section>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
+    <section class="box">
+        <div class="grid" id="0">0</div>
+        <div class="grid" id="1">1</div>
+        <div class="grid" id="2">2</div>
+        <div class="grid" id="3">3</div>
+        <div class="grid" id="4">4</div>
+        <div class="grid" id="5">5</div>
+        <div class="grid" id="6">6</div>
+        <div class="grid" id="7">7</div>
+        <div class="grid" id="8">8</div>
         
     </section>
+    <main>
+        <p></p>
+    </main>
+    <script>
+        //declear a variable to count how many times I clicked
+        var clickCount = 0;
+        var boxSection = document.querySelector('.box');
+        boxSection.addEventListener('click', function(event) {
+            var itemClicked = event.target;
+            console.log(itemClicked.id);
+            //everytime, when I click, clickCount increase by 1
+            clickCount++;
+            
+            console.log(clickCount);
+            //if clickCount is even number, show circle;
+            if (isEven(clickCount)) {
+                itemClicked.classList.add('circle');
+            } else {
+                itemClicked.classList.add('cross');
+            }
+        })
+        //
+        function isEven(num) {
+            return num % 2 === 0
+        }
+    </script>
 </body>
 </html>
