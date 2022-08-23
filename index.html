@@ -34,27 +34,51 @@
         var clickCount = 0;
         var boxSection = document.querySelector('.box');
         var clickedId = [];
+        var circleId = [];
+        var crossId = [];
+        var winOptions = [
+            ['0','1','2'],
+            [3,4,5],
+            [6,7,8],
+            ['0','3','6'],
+            [1,4,7],
+            [2,5,8],
+            ['0',4,8],
+            [2,4,6]
+        ]
         boxSection.addEventListener('click', function(event) {
             var itemClicked = event.target;
             // console.log(itemClicked.id);
-            if (!clickedId.includes(itemClicked.id)) {
+            if (clickedId.includes(itemClicked.id)) {return}
                 clickCount++;
                 clickedId.push(itemClicked.id);
+                console.log(clickedId);
                 if (isEven(clickCount)) {
                     itemClicked.classList.add('circle');
+                    console.log(itemClicked.id);
+                    circleId.push(itemClicked.id);
+                    console.log(circleId);
                 } else {
                     itemClicked.classList.add('cross');
+                    console.log(itemClicked.id);
+                    crossId.push(itemClicked.id);
+                    console.log(crossId);
                 }
-            } else return;
+        }) 
+        
+        if (winOptions.includes(circleId) || winOptions.includes(crossId)) {
+            console.log('win');
+        }
+        
             
-            console.log(clickedId);
+            
             //everytime, when I click, clickCount increase by 1
             
             
             // console.log(clickCount);
             //if clickCount is even number, show circle;
             
-        })
+      
         //
         function isEven(num) {
             return num % 2 === 0
