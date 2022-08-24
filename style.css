@@ -24,6 +24,12 @@ h1 {
     gap: 30px;
     margin-bottom: 10px;
 }
+.form1, .form2 {
+    display: block;
+}
+.no-show {
+    visibility:hidden;
+}
 .players img {
     width: 50px;
 }
