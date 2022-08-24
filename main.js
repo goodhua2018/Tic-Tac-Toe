@@ -30,6 +30,7 @@
  startGameButton.addEventListener('click', startGame);
  player1Button.addEventListener('click',confirmPlayer1Name);
  player2Button.addEventListener('click',confirmPlayer2Name);
+ 
 
  function confirmPlayer1Name (event) {
      event.preventDefault();
@@ -71,27 +72,38 @@
          }
      }
      //everytime, when I click, clickCount increase by 1   
-     judgeWin ();  
+     judgeWin (); 
+     judgeDraw ();
+     
  }
      // judge who will win: if every items in the items of winOption array are included in circleId or crossId, the game will be end.  
  function judgeWin () {
      for (let i = 0; i < winOptions.length; i++) {
-         console.log(winOptions[i]);
+        //  console.log(winOptions[i]);
          if (circleId.includes(winOptions[i][0]) &&
              circleId.includes(winOptions[i][1]) &&
              circleId.includes(winOptions[i][2])) {
                  winMessage.textContent = player2Name.textContent + " win"; 
+                 return true
          } 
          if (crossId.includes(winOptions[i][0]) &&
              crossId.includes(winOptions[i][1]) &&
              crossId.includes(winOptions[i][2])) {
              winMessage.textContent = player1Name.textContent + " win"; 
-         } 
-         if (clickCount === 9) {
-             winMessage.textContent = "It's a Draw";
-         } 
-     }
+             return true
+         }    
+    }
  }
+ 
+ 
+ function judgeDraw () {
+    if (clickCount === 9 && !judgeWin ()) {
+        winMessage.textContent = "It's a draw!"
+    }
+ }
+
+
+
  function startGame () {
      clickedId = [];
      circleId = [];

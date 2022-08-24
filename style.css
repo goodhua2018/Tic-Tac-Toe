@@ -14,7 +14,7 @@ h1 {
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 .box {
-    width: 310px;
+    width: 306px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
