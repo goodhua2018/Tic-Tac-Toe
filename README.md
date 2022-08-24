@@ -11,7 +11,6 @@
 - switch trun -- even number/odd number
 - how to judge a win -- function 
 - how to reset the game -- function 
-- Flow charts of app logic.
 ![Wireframing](./images/tictactoe.png)
 
 ## :rocket: Cool tech
