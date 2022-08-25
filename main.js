@@ -11,6 +11,8 @@
  var player2Input = document.querySelector('.player2-name');
  var player1Form = document.querySelector('.form1');
  var player2Form = document.querySelector('.form2');
+ var player1Turn = document.querySelector('.player1-turn');
+ var player2Turn = document.querySelector('.player2-turn');
  var player1, player2;
  var clickCount = 0;
  var clickedId = [];
@@ -49,7 +51,6 @@
  }
  // is there any way to make these two funtions into one function because they are nearly the same.
 
-
  function playersClick(event) {
      var itemClicked = event.target;
      // if the box had clicked, can not click again
@@ -66,9 +67,14 @@
          if (isEven(clickCount)) {
          itemClicked.classList.add('circle');
          circleId.push(itemClicked.id);
+         player1Turn.textContent = "Your turn!";
+         player2Turn.textContent = " ";
+
          } else {
          itemClicked.classList.add('cross');
          crossId.push(itemClicked.id);
+         player2Turn.textContent = "Your turn!";
+         player1Turn.textContent = " ";
          }
      }
      //everytime, when I click, clickCount increase by 1   
@@ -84,13 +90,17 @@
              circleId.includes(winOptions[i][1]) &&
              circleId.includes(winOptions[i][2])) {
                  winMessage.textContent = player2Name.textContent + " win"; 
+                 player1Turn.textContent = " ";
+                 player2Turn.textContent = " ";
                  return true
          } 
          if (crossId.includes(winOptions[i][0]) &&
              crossId.includes(winOptions[i][1]) &&
              crossId.includes(winOptions[i][2])) {
-             winMessage.textContent = player1Name.textContent + " win"; 
-             return true
+                winMessage.textContent = player1Name.textContent + " win"; 
+                player1Turn.textContent = " ";
+                player2Turn.textContent = " ";
+                return true
          }    
     }
  }
@@ -99,6 +109,8 @@
  function judgeDraw () {
     if (clickCount === 9 && !judgeWin ()) {
         winMessage.textContent = "It's a draw!"
+        player1Turn.textContent = " ";
+        player2Turn.textContent = " ";
     }
  }
 
@@ -116,6 +128,9 @@
      player2Name.textContent = 'Player 2';
      player1Input.value = ' ';
      player2Input.value = '';
+     player1Turn.textContent = " ";
+     player2Turn.textContent = " ";
+     
 
      for (let i = 0; i < grids.length; i++) {
          grids[i].className = 'grid';

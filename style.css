@@ -13,6 +13,17 @@ h1 {
     font-size: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
+.player1-turn, .player2-turn {
+    height: 15px;
+    width: 80px;
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    margin: 15px auto;
+    font-size: 15px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    
+
+}
 .box {
     width: 306px;
     display: flex;
