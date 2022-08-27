@@ -10,13 +10,17 @@
     
 </head>
 <body>
-    <section>
+<section class="wrap">
+    <audio src="./backgroundmusic.m4a" autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+    >
+  
+</audio>
         <header>
             <h1>Tic Tac Toe</h1>
             <p class="win-message">Who will be the winner?</p>
         </header>
-        <section class="players">
-            <section>
+        <section class="main">
+            <section class="left-side">
                 <p class="player1-text">Player 1</p>
                 <form action="" class="form1">
                     <input type="text" class="player1-name">
@@ -25,6 +29,22 @@
                 <p class="player1-turn"></p>
                 <img src="./images/cross.png" alt="">
             </section>
+
+        
+        
+            
+            <section class="box">
+                <div class="grid" id="0"></div>
+                <div class="grid" id="1"></div>
+                <div class="grid" id="2"></div>
+                <div class="grid" id="3"></div>
+                <div class="grid" id="4"></div>
+                <div class="grid" id="5"></div>
+                <div class="grid" id="6"></div>
+                <div class="grid" id="7"></div>
+                <div class="grid" id="8"></div>   
+            </section>
+
             <section>
                 <p class="player2-text">Player 2</p>
                 <form action="" class="form2">
@@ -35,22 +55,12 @@
                 <img src="./images/circle.png" alt="">
                 
             </section>
-            
+
         </section>
-        <section class="box">
-            <div class="grid" id="0"></div>
-            <div class="grid" id="1"></div>
-            <div class="grid" id="2"></div>
-            <div class="grid" id="3"></div>
-            <div class="grid" id="4"></div>
-            <div class="grid" id="5"></div>
-            <div class="grid" id="6"></div>
-            <div class="grid" id="7"></div>
-            <div class="grid" id="8"></div>   
-        </section>
+
         <section>
             <button class="start">Play Again</button>
         </section>
-    </section>
+</section>
 </body>
 </html>

@@ -32,6 +32,19 @@
  startGameButton.addEventListener('click', startGame);
  player1Button.addEventListener('click',confirmPlayer1Name);
  player2Button.addEventListener('click',confirmPlayer2Name);
+
+//  boxSection.addEventListener('mouseover', function(event) {
+//     var itemMouseover = event.target;
+     
+//     if (clickCount % 2 === 0) {
+//         itemMouseover.style.backgroundImage = "url('./images/cross.png')";
+//         itemMouseover.style.opacity = 0.3;
+//     } else {
+//         itemMouseover.style.backgroundImage = "url('./images/circle.png')";
+//         itemMouseover.style.opacity = 0.3;
+//     }
+    
+//    });
  
 
  function confirmPlayer1Name (event) {
@@ -79,33 +92,44 @@
      }
      //everytime, when I click, clickCount increase by 1   
      judgeWin (); 
-     judgeDraw ();
-     
+     judgeDraw ();   
  }
-     // judge who will win: if every items in the items of winOption array are included in circleId or crossId, the game will be end.  
+     // judge who will win: if every items in the items of winOption array are the same as in circleId or crossId, the game will be end.  
  function judgeWin () {
      for (let i = 0; i < winOptions.length; i++) {
-        //  console.log(winOptions[i]);
-         if (circleId.includes(winOptions[i][0]) &&
-             circleId.includes(winOptions[i][1]) &&
-             circleId.includes(winOptions[i][2])) {
-                 winMessage.textContent = player2Name.textContent + " win"; 
-                 player1Turn.textContent = " ";
-                 player2Turn.textContent = " ";
-                 return true
-         } 
-         if (crossId.includes(winOptions[i][0]) &&
-             crossId.includes(winOptions[i][1]) &&
-             crossId.includes(winOptions[i][2])) {
-                winMessage.textContent = player1Name.textContent + " win"; 
+        console.log(winOptions[i]);
+        if (circleId.includes(winOptions[i][0]) &&
+            circleId.includes(winOptions[i][1]) &&
+            circleId.includes(winOptions[i][2])) {
+                winMessage.textContent = player2Name.textContent + " win"; 
                 player1Turn.textContent = " ";
                 player2Turn.textContent = " ";
                 return true
-         }    
+        } 
+        if (crossId.includes(winOptions[i][0]) &&
+            crossId.includes(winOptions[i][1]) &&
+            crossId.includes(winOptions[i][2])) {
+               winMessage.textContent = player1Name.textContent + " win"; 
+               player1Turn.textContent = " ";
+               player2Turn.textContent = " ";
+               return true
+        }   
+        // playersConditions (circleId, player2Name);
+        // playersConditions (crossId, player1Name);
+        // function playersConditions (arr, name) {
+        //     if (arr.slice(-3).sort().join() === (winOptions[i].join())) {
+        //         winMessage.textContent = name.textContent + " win"; 
+        //         player1Turn.textContent = " ";
+        //         player2Turn.textContent = " ";
+        //         return true
+        //     }
+        // }
     }
  }
  
  
+    
+
  function judgeDraw () {
     if (clickCount === 9 && !judgeWin ()) {
         winMessage.textContent = "It's a draw!"
@@ -113,10 +137,8 @@
         player2Turn.textContent = " ";
     }
  }
-
-
-
- function startGame () {
+ 
+function startGame () {
      clickedId = [];
      circleId = [];
      crossId = [];
@@ -130,12 +152,10 @@
      player2Input.value = '';
      player1Turn.textContent = " ";
      player2Turn.textContent = " ";
-     
-
      for (let i = 0; i < grids.length; i++) {
          grids[i].className = 'grid';
      }
  }
  function isEven(num) {
      return num % 2 === 0
- }
+}
