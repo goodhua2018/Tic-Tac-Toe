@@ -1,4 +1,4 @@
- //declear a variable to count how many times I clicked  
+  
  var boxSection = document.querySelector('.box');
  var grids = document.querySelectorAll('.grid');
  var startGameButton = document.querySelector('.start');
@@ -14,6 +14,10 @@
  var player1Turn = document.querySelector('.player1-turn');
  var player2Turn = document.querySelector('.player2-turn');
  var player1, player2;
+ var winAudio = new Audio('./win.mp3');
+ var clickAudio = new Audio('./click.mp3');
+ var bgAudio = new Audio('./bg.mp3');
+ //declear a variable to count how many times I clicked 
  var clickCount = 0;
  var clickedId = [];
  var circleId = [];
@@ -27,7 +31,8 @@
      ["2","5","8"],
      ["0","4","8"],
      ["2","4","6"]
- ]
+ ];
+
  boxSection.addEventListener('click', playersClick);
  startGameButton.addEventListener('click', startGame);
  player1Button.addEventListener('click',confirmPlayer1Name);
@@ -46,6 +51,7 @@
     
 //    });
  
+
 
  function confirmPlayer1Name (event) {
      event.preventDefault();
@@ -70,6 +76,8 @@
      if (clickedId.includes(itemClicked.id)) {
          return
      }
+     clickAudio.play();
+     
      //when the game has a result, click will not work
      if (winMessage.textContent !== "Who will be the winner?") {
          itemClicked.classList.add('empty');
@@ -102,6 +110,13 @@
             circleId.includes(winOptions[i][1]) &&
             circleId.includes(winOptions[i][2])) {
                 winMessage.textContent = player2Name.textContent + " win"; 
+                
+                winAudio.play();
+                setTimeout(function() {
+                    bgAudio.pause();
+                    bgAudio.currentTime = 0;
+                 }, 5000);
+
                 player1Turn.textContent = " ";
                 player2Turn.textContent = " ";
                 return true
@@ -110,6 +125,12 @@
             crossId.includes(winOptions[i][1]) &&
             crossId.includes(winOptions[i][2])) {
                winMessage.textContent = player1Name.textContent + " win"; 
+               
+               winAudio.play();
+               setTimeout(function() {
+                bgAudio.pause();
+                bgAudio.currentTime = 0;
+             }, 5000);
                player1Turn.textContent = " ";
                player2Turn.textContent = " ";
                return true
@@ -139,6 +160,8 @@
  }
  
 function startGame () {
+     bgAudio.play();
+     
      clickedId = [];
      circleId = [];
      crossId = [];
@@ -159,3 +182,5 @@ function startGame () {
  function isEven(num) {
      return num % 2 === 0
 }
+
+
