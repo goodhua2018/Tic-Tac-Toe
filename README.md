@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-##  :computer: [Click here](https://goodhua2018.github.io/tic-tac-toe/) to see my live project!
+##  :computer: [Click here]([https://goodhua2018.github.io/Tic-Tac-Toe/])) to see my live project!
 
 ## :page_facing_up: About
 - Tic-Tac-Toe is a simple and fun game for 2 players, X and O;
