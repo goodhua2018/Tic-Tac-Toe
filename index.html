@@ -1,66 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js" defer></script>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" defer></script>
 </head>
 <body>
 <section class="wrap">
-    <!-- <audio src="./bg.m4a"  autoplay="autoplay" controls="controls"loop="loop"  preload="auto"
-    >
-  
-    </audio> -->
-        <header>
-            <h1>Tic Tac Toe</h1>
-            <p class="win-message">Who will be the winner?</p>
-        </header>
-        <section class="main">
-            <section class="left-side">
-                <p class="player1-text">Player 1</p>
-                <form action="" class="form1">
-                    <input type="text" class="player1-name">
-                    <button class="player1">confirm</button>
-                </form>
-                <p class="player1-turn"></p>
-                <img src="./images/cross.jpg" alt="">
-            </section>
+  <header>
+    <h1>Tic Tac Toe</h1>
+    <p class="win-message">Who will be the winner?</p>
+  </header>
+  <section class="main">
+    <section class="left-side">
+      <p class="player1-text">Player 1</p>
+      <form action="" class="form1">
+        <input type="text" class="player1-name">
+        <button class="player1">confirm</button>
+      </form>
+      <p class="player1-turn"></p>
+      <img src="./images/cross.jpg" alt="">
+    </section>
 
-        
-        
-            
-            <section class="box">
-                <div class="grid" id="0"></div>
-                <div class="grid" id="1"></div>
-                <div class="grid" id="2"></div>
-                <div class="grid" id="3"></div>
-                <div class="grid" id="4"></div>
-                <div class="grid" id="5"></div>
-                <div class="grid" id="6"></div>
-                <div class="grid" id="7"></div>
-                <div class="grid" id="8"></div>   
-            </section>
+   <!-- game board   -->
+    <section class="box">
+      <div class="grid" id="0"></div>
+      <div class="grid" id="1"></div>
+      <div class="grid" id="2"></div>
+      <div class="grid" id="3"></div>
+      <div class="grid" id="4"></div>
+      <div class="grid" id="5"></div>
+      <div class="grid" id="6"></div>
+      <div class="grid" id="7"></div>
+      <div class="grid" id="8"></div>   
+    </section>
 
-            <section>
-                <p class="player2-text">Player 2</p>
-                <form action="" class="form2">
-                    <input type="text" class="player2-name">
-                    <button class="player2">confirm</button>
-                </form>
-                <p class="player2-turn"></p>
-                <img src="./images/circle.jpg" alt="">
-                
-            </section>
+    <section>
+      <p class="player2-text">Player 2</p>
+      <form action="" class="form2">
+        <input type="text" class="player2-name">
+        <button class="player2">confirm</button>
+      </form>
+      <p class="player2-turn"></p>
+      <img src="./images/circle.jpg" alt="">
+    </section>
+  </section>
 
-        </section>
-
-        <section>
-            <button class="start">Play Again</button>
-        </section>
+  <section>
+      <button class="start">Play Again</button>
+  </section>
 </section>
 </body>
 </html>
